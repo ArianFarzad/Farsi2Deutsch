@@ -29,11 +29,10 @@ docker run -d `
 ## Linux
 
 ````bash
-
-docker run --rm \
+docker run --rm --network=host \
   -v ${PWD}/sql:/flyway/sql \
   flyway/flyway \
-  -url=jdbc:postgresql://host.docker.internal:5432/farsi2deutschDB \
+  -url=jdbc:postgresql://localhost:5432/farsi2deutschDB \
   -user=farsi2deutsch \
   -password=farsi2deutsch \
   migrate
